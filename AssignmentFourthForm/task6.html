@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6</title>
+</head>
+<body>
+    <fieldset>
+        
+        <h2 style="text-align: center;">Doctor Appointment Form</h2>
+        <hr color="red" width="500">
+        <table cellspacing="15">
+            <tr>
+                <td width="200px">Appointment Date</td>
+                <td width="200px"><input type="date" name="app" id="app"></td>
+            </tr>
+            <tr>
+                <td>Appointment Time</td>
+                <td><input type="time" name="app" id="app"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" id="name" placeholder="First"></td>
+                <td><input type="text" name="name" id="name" placeholder="Last"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <span>Male</span><input type="radio" name="gen" id="gen">
+                    <span>Female</span><input type="radio" name="gen" id="gen">
+                </td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td><input type="number" name="phone" id="phone" placeholder="# # # #"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input type="text" name="city" id="city" placeholder="city"></td>
+                <td><input type="text" name="state" id="state" placeholder="state"></td>
+            </tr>
+            <tr>
+                <td>Your Query</td>
+                <td><textarea name="query" id="query"></textarea></td>
+            </tr>
+            <tr>
+                <td>Appointment Type</td>
+                <td>
+                    Select which appointment type(s) you require
+                    <input type="checkbox" name="1" id="1"><span> Cervix checkup</span><br>
+                    <input type="checkbox" name="2" id="2"><span> Heart checkup</span><br>
+                    <input type="checkbox" name="3" id="3"><span> Eye check-up</span><br>
+                    <input type="checkbox" name="4" id="4"><span> Hearing Test</span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button>Send</button></td>
+            </tr>
+        </table>
+        
+
+    </fieldset>
+</body>
+</html>
