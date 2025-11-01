@@ -1,0 +1,23 @@
+*{
+    background-color: rgb(28, 195, 53);   
+}
+
+h1{
+    background-color: red;
+}
+
+p{
+    color: yellow;
+}
+
+#para2{
+    color: red;
+}
+
+.A{
+    background-color: blue;
+}
+
+h2{
+    background: linear-gradient(90deg, red 10%, blue);
+}

@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Momo+Signature&display=swap');
+
+
+h1{
+    font-family: "Momo Signature", cursive;
+    color: brown;
+    text-shadow: 3px 3px 3px black;
+}
+h2{
+    font-size: xx-large;
+    font-family: "Fugaz One", sans-serif;
+}
+
+p{
+    border: 2px solid green;
+    width:500px;
+    font-family: cursive;
+    font-weight: 400;
+    font-style: italic;
+    font-variant: small-caps;
+}
