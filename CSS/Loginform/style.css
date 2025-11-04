@@ -1,0 +1,38 @@
+body{
+    background-color: aliceblue;
+    
+}
+
+#mainbox{
+    background-color: white;
+    margin: 50px auto;
+    padding-left: 30px;
+    border: 1px solid #000;
+    width: 500px;
+    height: 500px;
+    box-shadow: 10px 10px 5px 1px gray;
+    border-radius: 25px;
+    background: url(./login\ img.jpeg);
+    background-size: cover;
+    
+}
+
+#formHeading{
+    text-align: center;
+    color: brown;
+}
+
+.loginForm{
+    text-align: center;
+    padding: 10px;
+
+    input{
+        border-radius: 25px;
+        padding: 7px;
+    }
+}
+
+#submitButton{
+    background-color: green;
+    color: blue;
+}
