@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
+body{
+    background-color: royalblue;
+}
+
+#mainbox{
+    background-color: white;
+    width: 500px;
+    height: 520px;
+    border-radius: 7px;
+    margin: 50px auto;
+    padding: 35px;
+}
+
+#pericon{
+    color: gray;
+    font-size: 40px;
+    font-family: "Material Symbols Outlined";
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 10px;
+}
+
+#name{
+    border: 0px;
+    padding: 7px;
+    font-size: larger;
+    margin: 0px 0px 2px 7px;
+}
+
+#emailIcon{
+    margin: 0px 5px 0px 10px;
+    padding: 5px 5px 0px 10px;
+    font-size: larger;
+    color: gray;
+}
+
+#email{
+    border: 0;
+    font-size: larger;
+    padding-left: 15px;
+}
+
+#security{
+    margin: 20px 5px 0px 10px;
+    padding: 5px 5px 0px 10px;
+    font-size: larger;
+    color: gray;
+}
+
+#password{
+    margin: 20px 5px 0px 10px;
+    padding: 5px 5px 0px 10px;
+    font-size: larger;
+    color: gray;
+    border: 0;
+    width: 350px;
+}
+
+#heading{
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: lighter;
+}
+
+#term{
+    font-size: large;
+    color: gray;
+    font-weight: lighter;
+    font-family: "Momo Trust Display", sans-serif;
+}
+
+#register{
+    margin: 40px 20px 0px 20px;
+    width: 460px;
+    height: 50px;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+    font-weight: bold;
+    background-color: royalblue;
+}

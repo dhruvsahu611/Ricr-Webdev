@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
+#div1{
+    border-radius: 7px;
+    width: 500px;
+    height: 400px;
+    padding: 25px;
+    margin: auto;
+    background-color: white;
+    color: black;
+    margin: 100px auto;
+}
+
+*{
+    background-color: royalblue;
+}
+
+#heading{
+    background-color: white;
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: lighter;
+}
+
+.fas fa-envelope-open{
+    background-color: white;
+}
+
+#emailIco{
+    background-color: white;
+    color:  brown;
+    font-size: larger;
+    padding-left: 10px;
+}
+
+#lockIco{
+    background-color: white;
+    color: brown;
+    font-size: larger;
+    padding-left: 10px;
+}
+
+#email{
+    font-size: larger;
+    background-color: white;
+    width: auto;
+    padding: 10px 10px 0px 10px;
+    margin: 10px 10px 0px 10px;
+    border: 0px;
+    
+}
+
+#password{
+    background-color: white;
+    padding: 10px 10px 0px 10px;
+    margin: 10px 10px 0px 10px;
+    border: 0px;
+    font-size: larger;
+    width: 350px;
+}
+
+#checkBox{
+    background-color: white;
+    color: rgb(86, 84, 84);
+    padding: 10px 10px 0px 2px;
+    margin: 10px 200px 50px 2px;
+    border: 0px;
+    font-size:medium;
+    width: 250px;
+}
+
+#logButton{
+    margin: 50px 50px 0px;
+    border: 0px;
+    color: white;
+    padding: 25px auto;
+    width: 400px;
+    height: 50px;
+}
+
+#eyeIco{
+    background-color: white;
+    color: brown;
+    font-size: larger;
+    padding-left: 10px;
+}
