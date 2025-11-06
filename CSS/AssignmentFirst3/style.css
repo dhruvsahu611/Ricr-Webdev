@@ -1,0 +1,35 @@
+#table{
+    width: 900px;
+    margin: 50px auto;
+    background-color:rgb(192, 222, 233);
+}
+
+#image{
+    
+    border-radius: 50%;
+    height: 250px;
+    padding: 20px;
+}
+
+.leftside{
+    background-color:rgb(64, 108, 108) ;
+    text-indent: 5%;
+}
+
+.sidetext{
+    color: darkgray;
+    padding: 0px 0px 0px 10px;
+}
+
+.heading{
+    color: rgb(74, 112, 112);
+    padding-left: 10px;
+}
+
+.smallhead{
+    color: rgb(20, 170, 230);
+    padding-left: 10px;
+}
+.content{
+    padding-left: 10px;
+}
