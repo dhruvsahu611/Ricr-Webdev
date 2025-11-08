@@ -1,3 +1,38 @@
 #Navbar{
-    
+    position: sticky;
+    background-color: rgb(21, 28, 239);
+    border: 1px solid black;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 25px;
+    align-items: center;
+
+    div{
+        display: flex;
+        gap: 15px;
+    }
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+
+#helpbutton{
+    height: 50px;
+    width: 50px;
+    font-size: xx-large;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#indiv{
+    span:hover{
+        color: brown;
+    }
 }
