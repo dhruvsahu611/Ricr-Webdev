@@ -1,0 +1,337 @@
+#Navbar{
+    background-color: white;
+    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    box-shadow: 10px 5px 10px gray;
+    border-radius: 10px;
+    top: 0;
+    position:sticky;
+    z-index: 99;
+}
+
+.inBar{
+    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    gap: 25px;
+    align-items: center;
+    font-size: large;
+}
+
+#signButton{
+    background-color: white;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 7px;
+}
+
+#signButton:hover{
+    background-color: lightgray;
+}
+
+.button{
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 7px;
+    margin: 10px;
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
+#sectionFirst{
+    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 100px;
+}
+
+#leftPart{
+    padding: 100px;
+    align-items: center;
+}
+
+#head1{
+    font-size: xx-large;
+}
+
+#image{
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px gray;
+}
+
+#text1{
+    font-size: x-large;
+    color: gray;
+}
+
+#email{
+    margin: 0;
+    padding: 10px;
+    width: 300px;
+    height: 20px;
+}
+
+#logoSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+.logos{
+    width: 200px;
+    height: 105px;
+}
+
+.logo{
+    width: 200px;
+    height: 55px;
+}
+
+#head2{
+    font-size: 50px;
+    text-align: center;
+}
+
+#text3{
+    font-size: x-large;
+    color: gray;
+    text-align: center;
+    padding: 0px 50px;
+    margin: 0px 190px;
+}
+
+#icon1{
+    color: white;
+    font-size: 30px;
+    background-color: black;
+    padding: 20px;
+    border-radius: 50%;
+}
+
+#sectionFourth{
+    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: space-around;
+    padding: 100px 200px;
+    gap: 100px;
+}
+
+.subDiv{
+    text-align: center;
+}
+
+.text2{
+    font-size: larger;
+    color: gray;
+}
+
+#head3{
+    font-size: 50px;
+    text-align: center;
+}
+
+#text3{
+    font-size: x-large;
+    color: gray;
+    text-align: center;
+    padding: 5px 300px;
+    line-height: 150%;
+}
+
+#sectionSixth{
+    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    align-items: center;
+    justify-content: space-around;
+    padding: 100px 100px;
+    gap: 100px;
+}
+
+.appImg{
+    padding: 0px;
+    border-radius: 7px;
+    border: 0px solid gray;
+    box-shadow: 4px 4px 2px gray;
+    height: 200px;
+    width: 300px;
+}
+
+.detailButton{
+    background-color: black;
+    color: white;
+    border-radius: 7px;
+    height: 40px;
+}
+
+#sectionSeventh{
+    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-around;
+    padding: 100px 100px;
+    gap: 100px;
+}
+
+#sideSeven{
+    font-size: 25px;
+    color: gray;
+}
+
+#sevenText{
+    color: gray;
+    font-size: larger;
+    padding-right: 300px;
+}
+
+.sevenIcon{
+    color: white;
+    background-color: black;
+    border-radius: 7px;
+    padding: 7px;
+}
+
+#sectionNine{
+    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 100px 250px;
+    gap: 50px;
+}
+
+#myImage{
+    width: 400px;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px gray;
+}
+
+#leftNine{
+    padding: 100px;
+    align-items: center;
+}
+
+.blackLogo{
+    width: 200px;
+    height: 105px;
+    filter:grayscale(120%);
+}
+
+#imgNine{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.blackLogos{
+    width: 200px;
+    height: 55px;
+    filter:grayscale(120%);
+}
+
+#text5{
+    font-size: xx-large;
+    color: gray;
+    text-align: center;
+    padding: 5px 440px;
+    line-height: 150%;
+}
+
+#sectionTwelve{
+    margin: 50px 200px;
+    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 0;
+    border-radius: 10px;
+    padding: 0;
+    box-shadow: 7px 7px 5px gray;
+}
+
+#left12{
+    background-color: rgb(46, 45, 45);
+    border-radius: 10px;
+    padding: 50px 0px 0px 50px;
+    align-items: center;
+    width: 500px;
+    gap: 0;
+    height: 500px;
+}
+
+.icon12{
+    background-color: rgb(46, 45, 45);
+    color: white;
+    font-size: 30px;
+    padding: 10px 10px 0px 50px;
+}
+
+.tbt{
+    color: gray;
+    font-size: 20px;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    width: 300px;
+}
+
+#right12{
+    padding: 0;
+    width: 90%;
+    gap: 0;
+    height: 520px;
+    margin: 0;
+}
+
+.tb{
+    color: gray;
+    font-size: 20px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.in{
+    border: 0;
+}
+
+.tdB{
+    border: 0;
+    width: 300px;
+}
+
+#sectionLast{
+    padding: 0px 100px 0px 100px;
+    color: gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    indiv{
+        gap: 25px;
+    }
+    top: 0;
+    font-size: 20px;
+}
+
+#indiv{
+    display: flex;
+    color: gray;
+    justify-content: space-between;
+    gap: 50px;
+    div:hover{
+        color: black;
+        cursor: pointer;
+    }
+}
