@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <header class="bg-primary w-100 d-flex justify-content-center text-light fs-1 p-3">
+        Dice Game
+    </header>
+
+    <div >
+        <div class="d-flex justify-content-center px-lg-5">
+            <div class="border m-5 text-center p-4 w-50 rounded-4 shadow border-secondary">
+                <h3>Player 1</h3>
+                <img src="./diceIMG/6.png" alt="" class="w-25 m-3" id="p1dice"><br>
+                <button class="btn btn-primary text-light m-2 w-25" disabled onclick="p1Play()" id="dice1">Roll Dice</button>
+            </div>
+
+            <div class="border m-5 text-center p-4 w-50 rounded-4 shadow border-secondary">
+                <h3>Player 2</h3>
+                <img src="./diceIMG/6.png" alt="" class="w-25 m-3" id="p2dice"><br>
+                <button class="btn btn-primary text-light m-2 w-25" disabled onclick="p2Play()" id="dice2">Roll Dice</button>
+            </div>
+        </div>
+
+        <div class="px-lg-5 text-center">
+            <h1 class="mb-0 pb-0"><b>Score Broard</b></h1><br>
+            <div class="d-flex justify-content-center px-5 w-100">
+                <div class="mx-5 text-center w-25">
+                    <p class="mb-1 fs-3">Player 1</p>
+                    <lable for="p1Score" class="fs-3" id="p1sc">0</label>
+                </div>
+                <div class="mx-5 text-center w-25">
+                    <p class="mb-1 fs-3">Player 2</p>
+                    <label for="p2Score" class="fs-3" id="p2sc">0</label>
+                </div>
+            </div>
+            <button class="btn btn-success fs-5 mx-3" onclick="start()" id="start">Start Game</button>
+            <button class="btn btn-danger fs-5 mx-3" disabled onclick="restart()" id="restart">Restart Game</button>
+        </div>
+    </div>
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      4crossorigin="anonymous"
+    ></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
