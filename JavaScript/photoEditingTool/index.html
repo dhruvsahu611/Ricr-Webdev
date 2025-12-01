@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Editor</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <header>
+        <div class="container-fluid bg-primary px-3 py-2 text-center display-6 text-light">Image Editor</div>
+    </header>
+    
+    <main>
+        <div class="container mx-3 border border-primary d-flex gap-3 p-3 my-2 w-100" id="content">
+
+            <div class="border border-danger w-25 p-4">
+                <div class="d-flex flex-column align-items-center border rounded shadow p-2 mb-3">
+                    <label for="Brightness" class="fs-4 pb-3">Brightness</label>
+                    <input type="range" name="Brightness" id="Brightness" min="0" max="100" value="50" onchange="changeBrightness()" class="form-range px-3">
+
+                    <div class="d-flex justify-content-between w-100 px-3">
+                        <span>0</span>
+                        <span>100</span>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column align-items-center border rounded shadow p-2 mb-3">
+                    <label for="Contrast" class="fs-4 pb-3">Contrast</label>
+                    <input type="range" name="Contrast" id="Contrast" min="0" max="100" value="50" onchange="changeContrast()" class="form-range px-3">
+
+                    <div class="d-flex justify-content-between w-100 px-3">
+                        <span>0</span>
+                        <span>100</span>
+                    </div>
+                </div>
+                <!-- mera karna hai abhi  1-->
+                <div class="d-flex flex-column align-items-center border rounded shadow p-2 mb-3">
+                    <label for="Grayscale" class="fs-4 pb-3">Grayscale</label>
+                    <input type="range" name="Grayscale" id="Grayscale" min="0" max="100" value="0" onchange="changeGrayscale()" class="form-range px-3">
+
+                    <div class="d-flex justify-content-between w-100 px-3">
+                        <span>0</span>
+                        <span>100</span>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="d-flex flex-column align-items-center border rounded shadow p-2 mb-3">
+                    <label for="Warmth" class="fs-4 pb-3">Warmth</label>
+                    <input type="range" name="Warmth" id="Warmth" min="0" max="100" value="0" onchange="changeWarmth()" class="form-range px-3">
+
+                    <div class="d-flex justify-content-between w-100 px-3">
+                        <span>0</span>
+                        <span>100</span>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="d-flex flex-column align-items-center border rounded shadow p-2 mb-3">
+                    <label for="Saturation" class="fs-4 pb-3">Saturation</label>
+                    <input type="range" name="Saturation" id="Saturation" min="0" max="100" value="50" onchange="changeSaturation()" class="form-range px-3">
+
+                    <div class="d-flex justify-content-between w-100 px-3">
+                        <span>0</span>
+                        <span>100</span>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="d-flex flex-column align-items-center border rounded shadow p-2 mb-3">
+                    <label for="Rotate" class="fs-4 pb-3">Rotate</label>
+                    <input type="range" name="Rotate" id="Rotate" min="0" max="100" value="50" onchange="changeRotate()" class="form-range px-3">
+
+                    <div class="d-flex justify-content-between w-100 px-3">
+                        <span>0</span>
+                        <span>100</span>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="d-flex flex-column align-items-center border rounded shadow p-2 mb-3">
+                    <label for="Blur" class="fs-4 pb-3">Blur</label>
+                    <input type="range" name="Blur" id="Blur" min="0" max="100" value="0" onchange="changeBlur()" class="form-range px-3">
+
+                    <div class="d-flex justify-content-between w-100 px-3">
+                        <span>0</span>
+                        <span>100</span>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="d-flex flex-column align-items-center border rounded shadow p-2 mb-3">
+                    <label for="Invert" class="fs-4 pb-3">Invert</label>
+                    <input type="range" name="Invert" id="Invert" min="0" max="100" value="0" onchange="changeInvert()" class="form-range px-3">
+
+                    <div class="d-flex justify-content-between w-100 px-3">
+                        <span>0</span>
+                        <span>100</span>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column gap-3 mt-5">
+                    <button class="btn btn-outline-warning" onclick="reset()"><i class="bi bi-arrow-clockwise"></i> Reset</button>
+                    <button class="btn btn-outline-success" onclick="download()"><i class="bi bi-download"></i> Download</button>
+                    <label for="Upload" class="btn btn-outline-primary" id="uploadlabel"><i class="bi bi-camera"></i> Upload Image</label>
+                </div>
+            </div>
+
+
+            <div class="border border-success w-75 d-flex justify-content-center align-items-center " id="workspace">
+                <img src="" alt="workImage" id="image">
+                <label for="Upload" class="btn btn-outline-primary" id="uploadLabel"><i class="bi bi-camera"></i> Upload Image</label>
+                <input type="file" name="Upload" id="Upload" class="d-none" onchange="uploadImage()" accept="image/*">
+            </div>
+        </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      4crossorigin="anonymous"
+    ></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
