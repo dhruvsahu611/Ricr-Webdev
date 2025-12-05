@@ -37,3 +37,57 @@ function sb_control(){
 function sb_control2(){
     document.getElementById("smartBulb").classList.toggle("on");
 }
+
+
+document.getElementById("C1").addEventListener("mouseenter", ()=> {
+    fillColor("red");
+})
+
+document.getElementById("C1").addEventListener("mouseleave", ()=> {
+    fillColor("white");
+})
+
+
+document.getElementById("C2").addEventListener("mouseenter", ()=> {
+    fillColor("blue");
+})
+
+document.getElementById("C2").addEventListener("mouseleave", ()=> {
+    fillColor("white");
+})
+
+document.getElementById("C3").addEventListener("mouseenter", ()=> {
+    fillColor("green");
+})
+
+document.getElementById("C3").addEventListener("mouseleave", ()=> {
+    fillColor("white");
+})
+
+document.getElementById("C4").addEventListener("mouseenter", ()=> {
+    fillColor("yellow");
+})
+
+document.getElementById("C4").addEventListener("mouseleave", ()=> {
+    fillColor("white");
+})
+
+document.getElementById("C5").addEventListener("mouseenter", ()=> {
+    fillColor("orange");
+})
+
+document.getElementById("C5").addEventListener("mouseleave", ()=> {
+    fillColor("white");
+})
+
+document.getElementById("C6").addEventListener("mouseenter", ()=> {
+    fillColor("brown");
+})
+
+document.getElementById("C6").addEventListener("mouseleave", ()=> {
+    fillColor("white");
+})
+
+function fillColor(Color){
+    document.getElementById("newBulb").style.backgroundColor=Color;
+}

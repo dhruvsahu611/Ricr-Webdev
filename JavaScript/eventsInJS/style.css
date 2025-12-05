@@ -22,3 +22,41 @@ button{
 .on{
     background-color: yellow;
 }
+
+#newBulb{
+    padding: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: fit-content;
+    margin: 20px;
+}
+
+.uppercolor{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+#C1{
+    background-color: red;
+}
+
+#C2{
+    background-color: blue;
+}
+#C3{
+    background-color: green;
+}
+#C4{
+    background-color: yellow;
+}
+#C5{
+    background-color: orange;
+}
+#C6{
+    background-color: brown;
+}
