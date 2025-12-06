@@ -1,22 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SOIT-RGPV</title>
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-</head>
-<body>
-    <header>
-        <img src="./rgpv logo.png" alt="">
-        <h1>School of Information Technology</h1>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <div class="w-100 bg-success d-flex justify-content-between px-5 py-1">
+      <button class="btn btn-danger text-light" onclick="support()">
+        Support/Help
+      </button>
+      <div
+        class="bg-warning rounded-5 align-content-center p-2 link-underline-light"
+        id="mail"
+        onclick="news()"
+      >
+        Academic News
+      </div>
+      <div
+        class="text-decoration-underline link-info align-content-center mx-5"
+        id="mail"
+        onclick="mail()"
+      >
+        <i class="bi bi-envelope"></i> soitrgpv@gmail.com
+      </div>
+    </div>
+    <header class="px-5 d-flex justify-content-center gap-5 pt-2 sticky-top top-0" id="header">
+      <img src="./rgpv logo.png" alt="" id="collegeLogo" />
+      <h1 class="text-center">
+        School of Information Technology <br />UTD RGPV, Bhopal(M.P)
+      </h1>
     </header>
+
+    <main>
+      <div class="mx-3 d-flex p-3 my-4 gap-4 rounded shadow" id="firstSec">
+        <div class="w-50 p-5 shadow rounded">
+          <h3 class="text-secondary text-decoration-underline">--About the Institue</h3>
+          <p class="text-success">
+            The School of Information Technology at RGTU was established in
+            2002-03. School of Information Technology offers B Tech Computer
+            Science and Business Systems as well as M. Tech. in Information
+            Technology and M Tech in Data Sciences. These courses prepare young
+            graduates to take state of art challenges as required by the
+            industry and R & D organizations Information Technology is a field
+            that continues to evolve at a rate faster than other disciplines.
+            Advances in the field have resulted in significant developments in
+            Information and Communication Technologies, which in turn, has had a
+            tremendous impact on the way research, is conducted. As a result the
+            school has increased its emphasis on research during the last few
+            years. I take much pride to announce that within a short span of
+            five years, the department has made a mark in ICT and Computing
+            research especially in the area of Mobile Computing, Datamining,
+            Soft computing, Information Security and Image Processing, which is
+            evident from the magnitude of contribution to scientific literature.
+            Encouraged by the continual success in the field of our research
+            interest, the department is planning to set up a Special Interest
+            Group in the area of Mobile Communication with close collaboration
+            with universities of international repute and the leading industries
+            of the area, which shall be focused on the design and development of
+            new technologies for betterment of mankind. This department shall
+            start an international journal on recent issues in information and
+            communication technologies to provide a forum to the researchers and
+            scientists. Realizing the need for the development of
+            interdisciplinary research activities so as to strengthen and
+            broaden our field, the Department has initiated close collaboration
+            with other local and international academic as well as industrial
+            institutions in the areas of nanotechnology, bioinformatics,
+            middleware technologies, service oriented architecture and sensor
+            networks. The department continues to contribute to advances in
+            Information Technology and is striving to improve its position as
+            one of the leading school in India.
+          </p>
+        </div>
+
+        <div class="w-50">
+          <img src="./soitimg.jpg" alt="" id="collegeimg" />
+        </div>
+      </div>
+
+
+      <div class="m-5 shadow p-3 text-center bg-info-subtle rounded-2 ">
+        <h2 class="text-secondary">Our Offered Program</h2><br>
+        <div class="d-flex fs-5 text-start p-5 gap-4">
+          <div class="w-50 shadow p-3 bg-light-subtle rounded-3">
+            <label for="">B.Tech - Artificial Intelligence and Machine Learning</label><br>
+            <label for="">B.Tech - Computer Science and Business System</label><br>
+            <label for="">B.Tech - Data Science</label>
+          </div>
+          <div class="w-50 shadow p-3 bg-light-subtle rounded-3">
+            <label for="">M.Tech - Data Science</label><br>
+            <label for="">M.Tech - Information Technology</label>
+          </div>
+        </div>
+      </div>
+
+      <div id="chat">
+        <button id="chatbot" class="btn btn-warning" onclick="chatbot()">For Any Queries? Ask Chatbot</button>
+      </div>
+
+    </main>
+
+    <div id="section-03" class="border">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 position-8 sep-vertical">
+                        <div class="module-context">
+                            <ul>
+                                <li><a href="../Departments/DistanceLearning-EDUSAT.aspx" target="_parent">Distance Learning-EDUSAT</a></li>
+                                <li><a href="../Exam/DownloadForms.aspx" target="_parent">Download Forms </a></li>
+                                <li><a href="http://result.rgpv.ac.in/result/programselect.aspx?id=$%" target="_parent">Result</a></li>
+                                <li><a href="../Uni/frm_ViewTT.aspx?id=$%" target="_parent">Time Table</a></li>
+                                <li><a href="../Support/StudentFAQ.aspx" target="_parent">FAQ</a></li>
+                                <li><a href="https://rgpv.refread.com/#/home" target="_parent">E-Library</a></li>
+                                <li><a href="../gallery/PaperGallery.aspx" target="_parent">Research Centers</a></li>
+                                <li><a href="../AboutRGTU/CentersandFacility.aspx" target="_parent">Centers &amp; Facilities</a></li>
+                                     
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 position-8 sep-vertical">
+                        <div class="module-context">
+                            <ul>
+                                <li><a href="../AboutRGTU/ExecutiveCouncil.aspx" target="_parent">The Executives Council</a></li>
+                                <li><a href="../AboutRGTU/FinCommittee.aspx" target="_parent">The Finance Committee</a></li>
+                                <li><a href="../Academics/BoardofStudies.aspx?id=$@" target="_parent">Board of Studies</a></li>
+                                <li><a href="../AboutRGTU/frm_ViewOrdinance.aspx" target="_parent">Ordinance</a></li>
+                                <li><a href="../Uni/frm_ViewScheme.aspx" target="_parent">Scheme/Syllabus</a></li>
+                                <li><a href="../Stu/StudentWelfare.aspx" target="_parent">Anti-Ragging</a></li>
+                                <li><a href="../University/ArchiveNews.aspx" target="_parent">News Bulletin</a></li>
+                                <li><a href="../Stu/StudentWelfare.aspx" target="_parent">Student WelFare </a></li>
+                                <li><a href="../Login/UniversityLogin.aspx" target="_blank">Office Login</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 position-8 sep-vertical">
+                        <div class="module-context">
+                            <ul>
+                                <li><a href="../AboutRGTU/Campus.aspx" target="_parent">The Campus</a></li>
+                                <li><a href="../AboutRGTU/VisionRGTU.aspx" target="_parent">Vision</a></li>
+                                <li><a href="../AboutRGTU/Logo.aspx" target="_parent">University Mascot</a></li>
+                                <li><a href="../AboutRGTU/Statutes.aspx?id=$@" target="_parent">Statutes</a></li>
+                                <li><a href="../Tender/Viewtender.aspx" target="_parent">Tenders</a></li>
+                                <li><a href="../Parents/Parents.aspx" target="_parent">Parents</a></li>
+                                <li><a href="http://mail.google.com/a/rgtu.net" target="_parent">Check Mail</a></li>
+                                <li><a href="../Uni/ImpNoticeArchive.aspx" target="_parent">Archive</a></li>
+                                <li><a href="../gallery/Gallery.aspx" target="_parent">Photo Gallery</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 position-9 sep-vertical bg-success rounded text-light">
+                        <div class="module-head">
+                            Contact Us</div>
+                        <div class="module-context AddressInfo">
+                            <ul>
+                                <li class="add-ho"><i class="bi bi-house-door"></i> Rajiv Gandhi Proudyogiki<br>
+                                    Vishwavidyalaya,<br>
+                                    Airport Road<br>
+                                    Bhopal-462033, Madhya Pradesh</li>
+                                <li class="phone-ho"><i class="bi bi-telephone"></i> 0755 - 2678891-92, Fax No. : 0755 - 2742006</li>
+                                <li class="email-ho"><i class="bi bi-envelope"></i> egov[at]rgpv[dot]ac[dot]in</li>
+                            </ul>
+                           
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -25,5 +186,5 @@
     ></script>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
