@@ -1,0 +1,30 @@
+
+#ricrLogo{
+    width: 100px;
+    border-radius: 50%;
+}
+#ricrpng{
+    width: 100%;
+}
+
+.tabs{
+    color: brown;
+}
+
+.tabs:hover{
+    color:darkblue;
+    cursor: pointer;
+    background-color:chocolate;
+    border-radius: 10px;
+}
+
+#mainSec:hover{
+    background-color:gainsboro;
+}
+
+#tagSec:hover{
+    background-color:gainsboro;
+    img{
+        opacity: 50%;
+    }
+}
