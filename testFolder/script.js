@@ -1,21 +1,19 @@
 function home(){
-    window.open("http://127.0.0.1:5500/testFolder/index.html");
+    window.open("./index.html");
 }
 
 function course(){
-    window.open("http://127.0.0.1:5500/testFolder/course.html");
+    window.open("./course.html");
 }
 function testimonials(){
-    window.open("http://127.0.0.1:5500/testFolder/testimonials.html");
+    window.open("./testimonials.html");
 }
 
 function contact(){
-    window.open("http://127.0.0.1:5500/testFolder/contact.html");
+    window.open("./contact.html");
 }
 
-function demo(){
-    window.open("http://127.0.0.1:5500/JavaScript/ricrDemoForm/index.html");
-}
+
 
 
 function bookNow(){
@@ -47,4 +45,20 @@ function bookNow(){
 
 function enq(){
     window.open("http://127.0.0.1:5500/testFolder/contact.html");
+}
+
+function contactSubmit(){
+    const name = document.getElementById("contactName").value;
+    const email = document.getElementById("contactEmail").value;
+    const message = document.getElementById("contactMessage").value;
+
+    console.log(name);
+    console.log(email);
+    console.log(message);
+
+    alert(`"Thank you for contacting us,"+ ${name} +"!"`);  
+    
+    document.getElementById("contactName").value="";
+    document.getElementById("contactEmail").value="";
+    document.getElementById("contactMessage").value="";
 }
