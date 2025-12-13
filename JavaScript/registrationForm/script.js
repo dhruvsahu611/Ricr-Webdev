@@ -23,7 +23,7 @@ function submit(){
     const special = document.getElementById("special").value;
     
 
-    alert("Form Submitted");
+    
 
     console.log(fullName);
     console.log(email);
@@ -48,4 +48,15 @@ function submit(){
     console.log(hear);
 
     console.log(special);
+
+    if (!fullName) {
+        document.getElementById("nameError").innerText = "Required";
+        return;
+    } else if (!/^[A-Za-z ]+$/.test(fullName)) {
+        document.getElementById("nameError").innerText =
+        "Only Alphabets and Spaces are Allowed\n";
+        return;
+    }
+
+    alert("Form Submitted");
 }

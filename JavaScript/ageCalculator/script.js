@@ -1,4 +1,5 @@
 function calculate(){
+    document.getElementById("imageDiv").innerHTML="";
     const curd = Number(document.getElementById("currDate").value.split("-")[0]);
     const birth = Number(document.getElementById("birthDate").value.split("-")[0]);
 
