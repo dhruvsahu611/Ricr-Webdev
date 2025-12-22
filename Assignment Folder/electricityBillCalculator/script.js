@@ -19,7 +19,7 @@ function calculate(){
 		
         document.getElementById("u1").innerHTML=`
             <div class="m-2 bg-white w-50 rounded p-2 fs-5 d-flex justify-content-between border-bottom">
-                <p>For 450 and above Units: </p>  <p>${units}U * ₹1.5 = ₹${totalBill.toFixed(2)}</p>
+                <p>For 450 and above Units: </p>  <p>${units}U * ₹1.5 = ₹${units*1.5.toFixed(2)}</p>
             </div>
         `
         units = 450;
@@ -29,7 +29,7 @@ function calculate(){
 		totalBill = totalBill+units*1.2;
         document.getElementById("u2").innerHTML=`
             <div class="m-2 bg-white w-50 rounded p-2 fs-5 d-flex justify-content-between border-bottom">
-                <p>For units between 250 and 450: </p> <p>${units}U * ₹1.2 = ₹${totalBill.toFixed(2)}</p>
+                <p>For units between 250 and 450: </p> <p>${units}U * ₹1.2 = ₹${units*1.2.toFixed(2)}</p>
             </div>
         `
 		units = 200;
@@ -40,7 +40,7 @@ function calculate(){
         document.getElementById("u3").innerHTML=`
             <div class="m-2 bg-white w-50 rounded p-2 fs-5 d-flex justify-content-between border-bottom">
                 <p>For units between 50 to 200:</p>
-                <p>${units}U * ₹0.75 = ₹${totalBill.toFixed(2)}</p>
+                <p>${units}U * ₹0.75 = ₹${units*0.75.toFixed(2)}</p>
             </div>
         `
 		units = 50;
@@ -50,7 +50,7 @@ function calculate(){
         document.getElementById("u4").innerHTML=`
             <div class="m-2 bg-white w-50 rounded p-2 fs-5 d-flex justify-content-between border-bottom">
                 <p>For units upto 50:</p>
-                <p>${units}U * ₹0.5 = ₹${totalBill.toFixed(2)}</p>
+                <p>${units}U * ₹0.5 = ₹${units*0.5.toFixed(2)}</p>
             </div>
         `
 	}

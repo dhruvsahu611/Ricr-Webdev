@@ -18,7 +18,7 @@ function calculate(){
 		
         document.getElementById("u1").innerHTML=`
             <div class="m-2 bg-white w-50 rounded p-2 fs-5 d-flex justify-content-between border-bottom">
-                <p>For 100km and above distance: </p>  <p>${distance}km * ₹9 = ₹${totalBill.toFixed(2)}</p>
+                <p>For 100km and above distance: </p>  <p>${distance}km * ₹9 = ₹${(distance*9).toFixed(2)}</p>
             </div>
         `
         distance = 100;
@@ -28,7 +28,7 @@ function calculate(){
 		totalBill = totalBill+distance*10;
         document.getElementById("u2").innerHTML=`
             <div class="m-2 bg-white w-50 rounded p-2 fs-5 d-flex justify-content-between border-bottom">
-                <p>For distance between 10 and 100km: </p> <p>${distance}km * ₹10 = ₹${totalBill.toFixed(2)}</p>
+                <p>For distance between 10 and 100km: </p> <p>${distance}km * ₹10 = ₹${(distance*10).toFixed(2)}</p>
             </div>
         `
 		distance = 10;
@@ -39,7 +39,7 @@ function calculate(){
         document.getElementById("u3").innerHTML=`
             <div class="m-2 bg-white w-50 rounded p-2 fs-5 d-flex justify-content-between border-bottom">
                 <p>For distance upto 10km:</p>
-                <p>${distance}km * ₹11 = ₹${totalBill.toFixed(2)}</p>
+                <p>${distance}km * ₹11 = ₹${(distance*11).toFixed(2)}</p>
             </div>
         `
 	}
