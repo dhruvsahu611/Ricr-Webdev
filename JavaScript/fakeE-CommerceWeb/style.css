@@ -1,0 +1,15 @@
+#home{
+    height: 100hv;
+}
+a:hover{
+    color: darkred !important;
+}
+
+.card{
+    height: 500px;
+}
+header{
+    top: 0;
+    z-index: 99;
+    position:sticky;
+}
