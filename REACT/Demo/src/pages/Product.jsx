@@ -3,7 +3,7 @@ import React from "react";
 const Product = ()=>{
     return(
         <>
-            <div className="bg-success text-light">
+            <div className="text-light">
                 This is Product Page.
             </div>
 
