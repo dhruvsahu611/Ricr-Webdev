@@ -45,7 +45,7 @@ const Contact = () => {
       <h1 className="text-center border-bottom">Contact Us</h1>
       <form onReset={handleClearForm} onSubmit={handleSubmit}>
         <div className="d-flex justify-content-center">
-          <div className="text-dark p-4 rounded border border-5 my-5">
+          <div className="text-dark p-4 rounded border-5 my-5">
             <div className="m-4 d-flex justify-content-between gap-3">
               <label htmlFor="fullName" className="font-bold">
                 Full Name:
