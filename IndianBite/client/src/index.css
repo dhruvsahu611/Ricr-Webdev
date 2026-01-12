@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+:root {
+  /* Primary Colors */
+  --color-primary: #BADFDB;
+  --color-primary-hover: #9FCFCC;
+
+  /* Secondary Colors */
+  --color-secondary: #FFA4A4;
+  --color-secondary-hover: #FF8F8F;
+
+  /* Background & Text */
+  --color-background: #FCF9EA;
+  --color-text: #2F2F2F;
+
+  /* Accent */
+  --color-accent: #FFBDBD;
+}
+
+
