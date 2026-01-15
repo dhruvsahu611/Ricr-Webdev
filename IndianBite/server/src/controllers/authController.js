@@ -60,7 +60,7 @@ export const UserLogin = async (req, res, next)=>{
 
         if(!existingUser){
             const error = new Error("Email Not Registered");
-            error.statusCode=402;
+            error.statusCode=401;
             return next(error);
         }
 
@@ -69,7 +69,7 @@ export const UserLogin = async (req, res, next)=>{
 
         if(!isVerified){
             const error = new Error("Password didn't match");
-            error.statusCode=402;
+            error.statusCode=401;
             return next(error);
         }
 

@@ -1,9 +1,130 @@
-import React from 'react'
+import React from "react";
+import toast from "react-hot-toast";
+import api from "../config/Api";
+import { useState } from "react";
 
 const Login = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [validationError, setValidationError] = useState({});
+
+  const handleClearForm = () => {
+    setFormData({
+      email: "",
+      password: "",
+    });
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    if (!validate()) {
+      setIsLoading(false);
+      toast.error("Enter correct email or password");
+      return;
+    }
+
+    try {
+      const res = await api.post("/auth/login", formData);
+      toast.success(res.data.message);
+      handleClearForm();
+    } catch (error) {
+      console.log(error);
+      toast.error(error?.response?.data?.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const validate = () => {
+    let Error = {};
+
+    if (
+      !/^[\w\.]+@(gmail|outlook|ricr|yahoo)\.(com|in|co.in)$/.test(
+        formData.email
+      )
+    ) {
+      Error.email = "Use Proper Email Format";
+    }
+
+    setValidationError(Error);
+
+    return Object.keys(Error).length > 0 ? false : true;
+  };
+
   return (
-    <div>Login</div>
-  )
-}
+    <>
+      <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 py-6 px-4">
+        <div className="max-w-4xl mx-auto ">
+          {/* Header */}
+          <div className="text-center mb-8">
+            <h1 className="text-4xl font-bold text-gray-900 mb-2">Login</h1>
+            <p className="text-lg text-gray-600">Order any Vegetarian Food</p>
+          </div>
+
+          {/* Form Container */}
+          <div className="flex justify-center">
+            <div className="bg-white rounded-xl shadow-2xl overflow-hidden w-1/2">
+              <form onSubmit={handleLogin} className="p-8">
+                {/* Personal Information */}
+                <div className="mb-10 ">
+                  <div className="grid-cols-1">
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email Address"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      disabled={isLoading}
+                      className="disabled:cursor-not-allowed w-full h-fit px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
+                    />
+
+                    <input
+                      type="password"
+                      name="password"
+                      value={formData.password}
+                      onChange={handleChange}
+                      required
+                      disabled={isLoading}
+                      placeholder="Enter password"
+                      className="mt-3 mb-0 disabled:cursor-not-allowed w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
+                    />
+                  </div>
+                </div>
+
+                {/* Submit Button */}
+                <div className="flex gap-4 pt-8 border-t-2 border-gray-200">
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="disabled:scale-100 disabled:cursor-not-allowed flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    {isLoading ? "Loading.." : "Login"}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          {/* Footer Note */}
+          <p className="text-center text-gray-600 mt-8 text-sm">
+            All fields marked are mandatory. We respect your privacy.
+          </p>
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default Login;
