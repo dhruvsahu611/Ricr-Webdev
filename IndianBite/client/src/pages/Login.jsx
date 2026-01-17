@@ -2,8 +2,12 @@ import React from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
 import { useState } from "react";
+import {useNavigate} from "react-router-dom";
 
 const Login = () => {
+
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -33,6 +37,7 @@ const Login = () => {
       const res = await api.post("/auth/login", formData);
       toast.success(res.data.message);
       handleClearForm();
+      navigate("/user-dashboard");
     } catch (error) {
       console.log(error);
       toast.error(error?.response?.data?.message);
