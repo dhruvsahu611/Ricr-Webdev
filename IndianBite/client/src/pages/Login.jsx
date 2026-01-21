@@ -3,8 +3,10 @@ import toast from "react-hot-toast";
 import api from "../config/Api";
 import { useState } from "react";
 import {useNavigate} from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
+  const {setUser, setIsLogin} = useAuth();
 
   const navigate = useNavigate();
 
@@ -36,6 +38,9 @@ const Login = () => {
     try {
       const res = await api.post("/auth/login", formData);
       toast.success(res.data.message);
+      setUser(res.data.data);
+      setIsLogin(true);
+      sessionStorage.setItem("IndianBiteUser", JSON.stringify(res.data.data));
       handleClearForm();
       navigate("/user-dashboard");
     } catch (error) {
