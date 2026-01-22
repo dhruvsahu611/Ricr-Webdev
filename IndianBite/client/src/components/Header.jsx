@@ -2,6 +2,8 @@ import React from "react";
 import hotel1 from "../assets/hotel1.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { CgProfile } from "react-icons/cg";
+
 
 const Header = () => {
   const { user, isLogin } = useAuth();
@@ -41,7 +43,7 @@ const Header = () => {
 
       <div className="flex gap-3">
         {isLogin ? (
-          <span className="text-amber-950 border rounded-xl bg-amber-300 p-3">{user.fullName}</span>
+          <div className="text-amber-950 border rounded-xl bg-blue-100 p-3 hover:cursor-pointer flex items-center gap-3 font-extrabold text-2xl" onClick={()=>navigate("/user-dashboard")}><CgProfile /> {user.fullName}</div>
         ) : (
           <>
             <button
