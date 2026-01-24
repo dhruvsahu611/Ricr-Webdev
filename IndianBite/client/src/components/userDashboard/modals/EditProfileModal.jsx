@@ -1,6 +1,24 @@
-import React from "react";
-
+import React, { useState } from "react";
+import api from "../../../config/Api"
+import { useAuth } from "../../../context/AuthContext";
 const EditProfileModal = ({ onClose }) => {
+
+  const {user, setUser} = useAuth();
+  const [formData, setFormData] = useState({
+    fullName: user.fullName,
+    email: user.email,
+    mobileNumber: user.mobileNumber,
+  });
+  const handleSubmit = async (e)=>{
+    e.preventDefault();
+    try {
+      const res = await api.put("/user/update", formData);
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <>
       <div className="fixed inset-0 bg-black/70 flex justify-center p-7 items-center w-full">
@@ -14,7 +32,9 @@ const EditProfileModal = ({ onClose }) => {
           >
             Save
           </button>
+          
         </div>
+        
       </div>
     </>
   );
