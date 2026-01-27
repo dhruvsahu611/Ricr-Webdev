@@ -6,7 +6,7 @@ import {useNavigate} from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
-  const {setUser, setIsLogin} = useAuth();
+  const { setUser, setIsLogin, setRole } = useAuth();
 
   const navigate = useNavigate();
 
@@ -29,12 +29,7 @@ const Login = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    if (!validate()) {
-      setIsLoading(false);
-      toast.error("Enter correct email or password");
-      return;
-    }
-
+    console.log(formData);
     try {
       const res = await api.post("/auth/login", formData);
       toast.success(res.data.message);
@@ -42,10 +37,34 @@ const Login = () => {
       setIsLogin(true);
       sessionStorage.setItem("IndianBiteUser", JSON.stringify(res.data.data));
       handleClearForm();
-      navigate("/user-dashboard");
+      switch (res.data.data.role) {
+        case "manager": {
+          setRole("manager");
+          navigate("/resturant-dashboard");
+          break;
+        }
+        case "partner": {
+          setRole("partner");
+          navigate("/rider-dashboard");
+          break;
+        }
+        case "customer": {
+          setRole("customer");
+          navigate("/user-dashboard");
+          break;
+        }
+        case "admin": {
+          setRole("admin");
+          navigate("/admin-dashboard");
+          break;
+        }
+
+        default:
+          break;
+      }
     } catch (error) {
       console.log(error);
-      toast.error(error?.response?.data?.message);
+      toast.error(error?.response?.data?.message || "Unknown Error");
     } finally {
       setIsLoading(false);
     }
@@ -85,7 +104,7 @@ const Login = () => {
           {/* Form Container */}
           <div className="flex justify-center">
             <div className="bg-white rounded-xl shadow-2xl overflow-hidden w-1/2">
-              <form onSubmit={handleLogin} className="p-8">
+              <form onSubmit={handleLogin} className="p-8" onReset={handleClearForm}>
                 {/* Personal Information */}
                 <div className="mb-10 ">
                   <div className="grid-cols-1">

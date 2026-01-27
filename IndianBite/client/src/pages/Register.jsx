@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import api from "../config/Api"
+import api from "../config/Api";
 
 const Register = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     mobileNumber: "",
-    password:"",
-    confirmPassword:"",
+    password: "",
+    confirmPassword: "",
+    role: "",
   });
   const [isLoading, setIsLoading] = useState(false);
   const [validationError, setValidationError] = useState({});
@@ -20,11 +21,12 @@ const Register = () => {
 
   const handleClearForm = () => {
     setFormData({
-        fullName: "",
-        email: "",
-        mobileNumber: "",
-        password:"",
-        confirmPassword:"",
+      fullName: "",
+      email: "",
+      mobileNumber: "",
+      password: "",
+      confirmPassword: "",
+      role: "",
     });
   };
 
@@ -41,7 +43,7 @@ const Register = () => {
 
     if (
       !/^[\w\.]+@(gmail|outlook|ricr|yahoo)\.(com|in|co.in)$/.test(
-        formData.email
+        formData.email,
       )
     ) {
       Error.email = "Use Proper Email Format";
@@ -87,9 +89,7 @@ const Register = () => {
             <h1 className="text-4xl font-bold text-gray-900 mb-2">
               Registration
             </h1>
-            <p className="text-lg text-gray-600">
-              Order any Vegetarian Food
-            </p>
+            <p className="text-lg text-gray-600">Order any Vegetarian Food</p>
           </div>
 
           {/* Form Container */}
@@ -105,6 +105,52 @@ const Register = () => {
                   Personal Information
                 </h2>
                 <div className="grid grid-cols-2 gap-6">
+                  <div className="w-full">
+                    <div className="flex items-center justify-between">
+                      <label>I am </label>
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="role"
+                          id="manager"
+                          checked={formData.role === "manager"}
+                          value={"manager"}
+                          onChange={handleChange}
+                        />
+                        <label htmlFor="manager">Resturant Manager</label>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="role"
+                          id="partner"
+                          checked={formData.role === "partner"}
+                          value={"partner"}
+                          onChange={handleChange}
+                        />
+                        <label htmlFor="partner">Delivery Partner</label>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="radio"
+                          name="role"
+                          id="customer"
+                          checked={formData.role === "customer"}
+                          value={"customer"}
+                          onChange={handleChange}
+                        />
+                        <label htmlFor="customer">Customer</label>
+                      </div>
+                    </div>
+
+                    {validationError.role && (
+                      <span className="text-xs text-red-500">
+                        {validationError.role}
+                      </span>
+                    )}
+
+                  </div>
+
                   <div>
                     <input
                       type="text"
@@ -143,7 +189,7 @@ const Register = () => {
                     disabled={isLoading}
                     className="disabled:cursor-not-allowed w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
                   />
-                  
+
                   <input
                     type="password"
                     name="password"
@@ -154,7 +200,12 @@ const Register = () => {
                     placeholder="Enter password"
                     className="disabled:cursor-not-allowed w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500 transition"
                   />
-                  <label htmlFor="confirmPassword" className="flex items-center font-bold text-2xl">Confirm Password:</label>
+                  <label
+                    htmlFor="confirmPassword"
+                    className="flex items-center font-bold text-2xl"
+                  >
+                    Confirm Password:
+                  </label>
                   <input
                     type="password"
                     name="confirmPassword"
@@ -168,7 +219,6 @@ const Register = () => {
                 </div>
               </div>
 
-
               {/* Submit Button */}
               <div className="flex gap-4 pt-8 border-t-2 border-gray-200">
                 <button
@@ -176,7 +226,7 @@ const Register = () => {
                   disabled={isLoading}
                   className="disabled:scale-100 disabled:cursor-not-allowed flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg"
                 >
-                  {isLoading ?"Submitting":"Submit"}
+                  {isLoading ? "Submitting" : "Submit"}
                 </button>
                 <button
                   type="reset"
