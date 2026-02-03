@@ -10,7 +10,7 @@ import { useAuth } from "../../context/AuthContext";
 import api from "../../config/Api";
 import toast from "react-hot-toast";
 
-const UserSideBar = ({
+const RestaurantSideBar = ({
   active,
   setActive,
   isSidebarOpen,
@@ -88,4 +88,4 @@ const UserSideBar = ({
   );
 };
 
-export default UserSideBar;
+export default RestaurantSideBar;

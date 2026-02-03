@@ -2,13 +2,17 @@ import React from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
 import { useState } from "react";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import ForgetPasswordModal from "../components/publicModals/ForgetPasswordModal";
 
 const Login = () => {
   const { setUser, setIsLogin, setRole } = useAuth();
 
   const navigate = useNavigate();
+
+  const [isForgetPasswordModalOpen, setIsForgetPasswordModalOpen] =
+    useState(false);
 
   const [formData, setFormData] = useState({
     email: "",
@@ -80,7 +84,7 @@ const Login = () => {
 
     if (
       !/^[\w\.]+@(gmail|outlook|ricr|yahoo)\.(com|in|co.in)$/.test(
-        formData.email
+        formData.email,
       )
     ) {
       Error.email = "Use Proper Email Format";
@@ -104,7 +108,11 @@ const Login = () => {
           {/* Form Container */}
           <div className="flex justify-center">
             <div className="bg-white rounded-xl shadow-2xl overflow-hidden w-1/2">
-              <form onSubmit={handleLogin} className="p-8" onReset={handleClearForm}>
+              <form
+                onSubmit={handleLogin}
+                className="p-8"
+                onReset={handleClearForm}
+              >
                 {/* Personal Information */}
                 <div className="mb-10 ">
                   <div className="grid-cols-1">
@@ -142,6 +150,17 @@ const Login = () => {
                     {isLoading ? "Loading.." : "Login"}
                   </button>
                 </div>
+                <div className="w-full flex justify-center mt-1">
+                  <button
+                    className="text-blue-600 hover:text-amber-900 cursor-pointer underline"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsForgetPasswordModalOpen(true);
+                    }}
+                  >
+                    Forget Password?
+                  </button>
+                </div>
               </form>
             </div>
           </div>
@@ -152,6 +171,12 @@ const Login = () => {
           </p>
         </div>
       </div>
+
+      {isForgetPasswordModalOpen && (
+        <ForgetPasswordModal
+          onClose={() => setIsForgetPasswordModalOpen(false)}
+        />
+      )}
     </>
   );
 };

@@ -7,19 +7,21 @@ import toast from "react-hot-toast";
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { FaRegUserCircle } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
+import ResetPasswordModal from "./modals/ResetPasswordModal";
 
 
 const UserProfile = () => {
   const [isEditProfileModalOpen, setIsEditProfileModalOpen] = useState(false);
+  const [isResetPasswordModalOpen, setIsResetPasswordModalOpen] = useState(false);
 
   const { user, setUser } = useAuth();
   const [preview, setPreview] = useState("");
-  const [photo, setPhoto] = useState("");
+
 
   const changePhoto = async (photo) => {
     const form_Data = new FormData();
     form_Data.append("image", photo);
-    form_Data.append("imageURL", preview);
+    //form_Data.append("imageURL", preview);
     try {
       const res = await api.patch("/user/changePhoto", form_Data);
       toast.success(res.data.message);
@@ -37,6 +39,8 @@ const UserProfile = () => {
     setPreview(newPhotoURL);
     changePhoto(file);
   };
+
+  
 
   return (
     <>
@@ -103,18 +107,30 @@ const UserProfile = () => {
                 {user.mobileNumber}
               </span>
             </div>
-            <button
-              className="border px-5 py-2 bg-amber-500 text-amber-100 hover:cursor-pointer rounded-xl"
-              onClick={() => setIsEditProfileModalOpen(true)}
-            >
-              Edit Profile
-            </button>
+            <div>
+              <button
+                className="border px-5 py-2 bg-amber-500 text-amber-100 hover:cursor-pointer rounded-xl"
+                onClick={() => setIsEditProfileModalOpen(true)}
+              >
+                Edit Profile
+              </button>
+              <button
+                className="border px-5 py-2 bg-emerald-700 text-amber-100 hover:cursor-pointer rounded-xl"
+                onClick={() => setIsResetPasswordModalOpen(true)}
+              >
+                Reset Password
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
       {isEditProfileModalOpen && (
         <EditProfileModal onClose={() => setIsEditProfileModalOpen(false)} />
+      )}
+
+      {isResetPasswordModalOpen && (
+        <ResetPasswordModal onClose={()=> setIsResetPasswordModalOpen(false)} />
       )}
     </>
   );
