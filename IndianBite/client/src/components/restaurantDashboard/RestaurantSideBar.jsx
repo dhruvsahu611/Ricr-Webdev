@@ -1,32 +1,34 @@
 import React from "react";
-import { MdStreetview } from "react-icons/md";
-import { IoPerson } from "react-icons/io5";
-import { FaShoppingCart } from "react-icons/fa";
-import { FaMoneyBillTransfer } from "react-icons/fa6";
-import { RiCustomerServiceFill } from "react-icons/ri";
-import { TfiMenuAlt } from "react-icons/tfi";
+import { TbChartTreemap } from "react-icons/tb";
+import { ImProfile } from "react-icons/im";
+import { BiSolidFoodMenu } from "react-icons/bi";
+import { TiShoppingCart } from "react-icons/ti";
+import { FaMoneyBillWave } from "react-icons/fa";
+import { RiCustomerService2Fill } from "react-icons/ri";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { MdLogout } from "react-icons/md";
-import { useAuth } from "../../context/AuthContext";
+
 import api from "../../config/Api";
 import toast from "react-hot-toast";
+import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const RestaurantSideBar = ({
   active,
   setActive,
-  isSidebarOpen,
-  setIsSidebarOpen,
+  isCollapsed,
+  setIsCollapsed,
 }) => {
   const { setUser, setIsLogin } = useAuth();
+  const navigate = useNavigate();
+
   const menuItems = [
-    { key: "overview", title: "Overview", icon: <MdStreetview /> },
-    { key: "profile", title: "Profile", icon: <IoPerson /> },
-    { key: "orders", title: "Orders", icon: <FaShoppingCart /> },
-    {
-      key: "transactions",
-      title: "Transactions",
-      icon: <FaMoneyBillTransfer />,
-    },
-    { key: "helpDesk", title: "Help Desk", icon: <RiCustomerServiceFill /> },
+    { key: "overview", title: "Overview", icon: <TbChartTreemap /> },
+    { key: "profile", title: "Profile", icon: <ImProfile /> },
+    { key: "menu", title: "Menu", icon: <BiSolidFoodMenu /> },
+    { key: "orders", title: "Orders", icon: <TiShoppingCart /> },
+    { key: "earnings", title: "Earnings", icon: <FaMoneyBillWave /> },
+    { key: "helpdesk", title: "Help Desk", icon: <RiCustomerService2Fill /> },
   ];
 
   const handleLogout = async () => {
@@ -35,39 +37,50 @@ const RestaurantSideBar = ({
       toast.success(res.data.message);
       setUser("");
       setIsLogin(false);
-      sessionStorage.removeItem("IndianBiteUser");
-      setTimeout(() => onClose(), 1500);
+      navigate("/");
+      sessionStorage.removeItem("CravingUser");
     } catch (error) {
       toast.error(error?.response?.data?.message || "Unknown Error");
-      console.log("Logout mein error hai Frontend mein.");
+
     }
   };
 
   return (
     <>
-      <div className="p-3">
+      <div className="p-2 flex flex-col justify-between h-full">
         <div>
-          <div className="text-xl font-bold">
-            {" "}
+          <div className="h-10 text-xl font-bold flex gap-5 items-center mb-3">
             <button
-              onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              className="p-2"
+              className="ms-2 hover:scale-105"
+              onClick={() => setIsCollapsed(!isCollapsed)}
             >
-              <TfiMenuAlt />
-            </button>{" "}
-            <span>{isSidebarOpen ? "UserDashboard" : ""}</span>
+              <GiHamburgerMenu />
+            </button>
+            {!isCollapsed && (
+              <span className="overflow-hidden text-nowrap">
+                Restaurant Dashboard
+              </span>
+            )}
           </div>
           <hr />
+
           <div className="py-6 space-y-5 w-full">
             {menuItems.map((item, idx) => (
               <button
+                className={`flex gap-3 items-center text-lg ps-2 rounded-xl h-10 w-full text-nowrap overflow-hidden duration-300
+                ${
+                  active === item.key
+                    ? "bg-(--color-secondary) text-white"
+                    : "hover:bg-gray-100/70"
+                } 
+              `}
                 onClick={() => setActive(item.key)}
                 key={idx}
-                className={`w-full flex gap-3 items-center p-3 rounded-xl ${active === item.key ? "bg-amber-500 text-amber-100" : "hover:bg-gray-400"}`}
+
               >
-                {" "}
+
                 {item.icon}
-                {isSidebarOpen && item.title}
+                {!isCollapsed && item.title}
               </button>
             ))}
           </div>
@@ -78,9 +91,9 @@ const RestaurantSideBar = ({
             className="flex gap-3 items-center text-lg ps-2 rounded-xl h-10 w-full text-nowrap overflow-hidden duration-300 hover:bg-red-500 hover:text-white text-red-600"
             onClick={handleLogout}
           >
-            {" "}
+            
             <MdLogout />
-            {isSidebarOpen && "Logout"}
+            {!isCollapsed && "Logout"}
           </button>
         </div>
       </div>
