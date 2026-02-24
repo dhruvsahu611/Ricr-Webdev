@@ -76,7 +76,7 @@ const RestaurantProfile = () => {
                 </div>
                 <label
                   htmlFor="imageUpload"
-                  className="absolute bottom-2 right-2 bg-(--color-secondary) text-white p-3 rounded-full hover:bg-(--color-secondary-hover) cursor-pointer transition transform hover:scale-110"
+                  className="absolute bottom-2 right-2 bg-emerald-700 text-white p-3 rounded-full hover:bg-(--color-secondary-hover) cursor-pointer transition transform hover:scale-110"
                 >
                   <FaCamera size={18} />
                 </label>
@@ -97,11 +97,11 @@ const RestaurantProfile = () => {
             <div className="flex justify-between w-full">
               <div>
                 <div className="mb-6">
-                  <h1 className="text-4xl font-bold text-(--color-primary) mb-2">
+                  <h1 className="text-4xl font-bold text-emerald-900 mb-2">
                     {user?.fullName || "Manager Name"}
                   </h1>
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="bg-(--color-secondary) text-white px-3 py-1 rounded-full text-sm font-semibold capitalize">
+                    <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold capitalize">
                       {user?.role || "manager"}
                     </span>
                     <span
@@ -136,13 +136,13 @@ const RestaurantProfile = () => {
                 <div className="flex gap-3">
                   <button
                     onClick={() => setIsEditProfileModalOpen(true)}
-                    className="px-6 py-2 bg-(--color-secondary) text-white rounded-lg hover:bg-(--color-secondary-hover) transition font-semibold"
+                    className="px-6 py-2 bg-emerald-900 text-white rounded-lg hover:bg-emerald-200 hover:text-emerald-900 hover:cursor-pointer transition font-semibold"
                   >
                     Edit Profile
                   </button>
                   <button
                     onClick={() => setIsResetPasswordModalOpen(true)}
-                    className="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition font-semibold"
+                    className="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-950 hover:cursor-pointer transition font-semibold"
                   >
                     Reset Password
                   </button>

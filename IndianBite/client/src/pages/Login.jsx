@@ -101,7 +101,7 @@ const Login = () => {
         <div className="max-w-4xl mx-auto ">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">Login</h1>
+            <h1 className="text-4xl font-bold text-emerald-900 mb-2">Login</h1>
             <p className="text-lg text-gray-600">Order any Vegetarian Food</p>
           </div>
 
@@ -145,7 +145,7 @@ const Login = () => {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="disabled:scale-100 disabled:cursor-not-allowed flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg"
+                    className="hover:cursor-pointer disabled:scale-100 disabled:cursor-not-allowed flex-1 bg-linear-to-r from-emerald-950 to-emerald-700 text-white font-bold py-4 px-6 rounded-lg  hover:to-orange-800 transition duration-300 transform hover:scale-105 shadow-lg"
                   >
                     {isLoading ? "Loading.." : "Login"}
                   </button>

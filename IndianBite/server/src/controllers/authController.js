@@ -94,7 +94,7 @@ export const UserLogin = async (req, res, next) => {
 export const UserLogout = async (req, res, next) => {
   try {
     res.clearCookie("parleG");
-    res.status(200).json({ message: "Logout Successfull", data: existingUser });
+    res.status(200).json({ message: "Logout Successfull"});
   } catch (error) {
     next(error);
   }
@@ -158,9 +158,13 @@ export const UserVerifyOtp = async (req, res, next) => {
       error.statusCode = 401;
       return next(error);
     }
+    console.log(otp, "otp vala otp");
+    console.log(existingUserOTP.password);
+    
+    
 
     //verify password
-    const isVerified = await bcrypt.compare(otp, existingUserOTP.password);
+    const isVerified = await bcrypt.compare(String(otp), existingUserOTP.otp);
 
     if (!isVerified) {
       const error = new Error("Password didn't match");
@@ -178,13 +182,18 @@ export const UserVerifyOtp = async (req, res, next) => {
     }
 
     //token generation will be done after it.
+    console.log('tokengenration');
+    
 
-    await genOtpToken(existingUser, res);
+    genOtpToken(existingUser, res);
+    console.log("finally responsing start");
+    
 
     //send message to fe
-    res.status(200).json({ message: "Verified", data: existingUser });
+    res.status(200).json({ message: "Verified"});
   } catch (error) {
     next(error);
+    console.log("authController mein verification mein error hai");
   }
 };
 

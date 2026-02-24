@@ -9,6 +9,6 @@ router.post("/login", UserLogin);
 router.get("/logout", UserLogout);
 router.post("/genOtp", UserGenOTP);
 router.post("/verifyOtp", UserVerifyOtp);
-router.post("/forgetPasword",OtpProtect,UserForgetPassword);
+router.post("/forgetPassword",OtpProtect,UserForgetPassword);
 
 export default router;

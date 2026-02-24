@@ -6,6 +6,7 @@ import api from "../../../config/Api";
 
 const EditProfileModal = ({ onClose }) => {
   const { user, setUser, setIsLogin } = useAuth();
+  console.log(user);
   const [formData, setFormData] = useState({
     fullName: user?.fullName || "",
     email: user?.email || "",
@@ -141,7 +142,7 @@ const EditProfileModal = ({ onClose }) => {
     try {
       const res = await api.put("/user/update", formData);
       if (res.data?.data) {
-        sessionStorage.setItem("CravingUser", JSON.stringify(res.data.data));
+        sessionStorage.setItem("IndianBiteUser", JSON.stringify(res.data.data));
         setUser(res.data.data);
         setIsLogin(true);
         setMessage({ type: "success", text: "Profile updated successfully!" });
@@ -488,7 +489,7 @@ const EditProfileModal = ({ onClose }) => {
               <button
                 type="submit"
                 disabled={loading}
-                className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                className="hover:cursor-pointer px-6 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-900 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
                 {loading ? (
                   <>

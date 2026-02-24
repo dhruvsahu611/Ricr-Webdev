@@ -62,10 +62,10 @@ const UserProfile = () => {
   return (
     <>
       <div className="bg-gray-50 rounded-lg p-6 h-full overflow-y-auto space-y-6">
-        {/* Header Section with Photo and Basic Info */}
+
         <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
           <div className="flex gap-6">
-            {/* Photo Section */}
+
             <div className="flex flex-col items-center">
               <div className="relative">
                 <div className="border-4 border-gray-300 rounded-full w-40 h-40 overflow-hidden bg-gray-100">
@@ -77,7 +77,7 @@ const UserProfile = () => {
                 </div>
                 <label
                   htmlFor="imageUpload"
-                  className="absolute bottom-2 right-2 bg-(--color-secondary) text-white p-3 rounded-full hover:bg-(--color-secondary-hover) cursor-pointer transition transform hover:scale-110"
+                  className="absolute bottom-2 right-2 bg-emerald-500 text-white p-3 rounded-full hover:bg-(--color-secondary-hover) cursor-pointer transition transform hover:scale-110"
                 >
                   <FaCamera size={18} />
                 </label>
@@ -98,11 +98,11 @@ const UserProfile = () => {
             <div className="flex justify-between w-full">
               <div>
                 <div className="mb-6">
-                  <h1 className="text-4xl font-bold text-(--color-primary) mb-2">
+                  <h1 className="text-4xl font-bold text-emerald-900 mb-2">
                     {user?.fullName || "User Name"}
                   </h1>
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="bg-(--color-secondary) text-white px-3 py-1 rounded-full text-sm font-semibold capitalize">
+                    <span className="bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-semibold capitalize">
                       {user?.role || "customer"}
                     </span>
                     <span
@@ -148,13 +148,13 @@ const UserProfile = () => {
               <div className="flex flex-col justify-center gap-4">
                 <button
                   onClick={() => setIsEditProfileModalOpen(true)}
-                  className="px-6 py-2 bg-(--color-secondary) text-white rounded-lg hover:bg-(--color-secondary-hover) transition font-semibold"
+                  className="px-6 py-2 bg-emerald-900 text-white rounded-lg hover:bg-emerald-100 hover:text-emerald-900 hover:cursor-pointer transition font-semibold"
                 >
                   Edit Profile
                 </button>
                 <button
                   onClick={() => setIsResetPasswordModalOpen(true)}
-                  className="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition font-semibold"
+                  className="px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition font-semibold"
                 >
                   Reset Password
                 </button>
@@ -166,7 +166,7 @@ const UserProfile = () => {
         {/* Personal Information Section */}
         <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
           <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-            <span className="w-1 h-6 bg-(--color-secondary) rounded"></span>
+            <span className="w-1 h-6 bg-emerald-400"></span>
             Personal Information
           </h2>
           <div className="space-y-1">

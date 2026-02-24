@@ -47,7 +47,7 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">
+            <h1 className="text-4xl font-bold text-emerald-900 mb-2">
               Contact US
             </h1>
             <p className="text-lg text-gray-600">
@@ -64,7 +64,7 @@ const Contact = () => {
             >
               {/* Personal Information */}
               <div className="mb-10">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-indigo-500">
+                <h2 className="text-2xl font-bold text-emerald-800 mb-6 pb-3 border-b-2 border-emerald-950">
                   Provide Information
                 </h2>
                 <div className="grid grid-cols-2 gap-6">
@@ -121,7 +121,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="hover:cursor-pointer disabled:scale-100 disabled:cursor-not-allowed flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg"
+                  className="hover:cursor-pointer disabled:scale-100 disabled:cursor-not-allowed flex-1 bg-linear-to-tr from-emerald-950 to-emerald-700 text-white font-bold py-4 px-6 rounded-lg hover:from-emerald-700 hover:to-emerald-800 transition duration-300 transform hover:scale-105 shadow-lg"
                 >
                   {isLoading ?"Submitting":"Submit"}
                 </button>

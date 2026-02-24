@@ -43,7 +43,7 @@ const UserDashboard = () => {
     <>
       <div className="w-full h-[90vh] flex">
         <div
-          className={`bg-blue-300 transition-all duration-300 ease-in-out ${isSidebarOpen ? "w-2/10" : "w-16"}`}
+          className={`bg-slate-800 transition-all duration-300 ease-in-out ${isSidebarOpen ? "w-2/10" : "w-16"}`}
         >
           <UserSideBar active={active} setActive={setActive} isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}/>
         </div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import api from "../config/Api";
+import {useNavigate} from "react-router-dom"
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ const Register = () => {
     confirmPassword: "",
     role: "",
   });
+  const navigate = useNavigate();
+
   const [isLoading, setIsLoading] = useState(false);
   const [validationError, setValidationError] = useState({});
 
@@ -72,6 +75,7 @@ const Register = () => {
       const res = await api.post("/auth/register", formData);
       toast.success(res.data.message);
       handleClearForm();
+      navigate("/login");
     } catch (error) {
       console.log(error);
       toast.error(error.message);
@@ -86,7 +90,7 @@ const Register = () => {
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">
+            <h1 className="text-4xl font-bold text-emerald-900 mb-2">
               Registration
             </h1>
             <p className="text-lg text-gray-600">Order any Vegetarian Food</p>
@@ -101,18 +105,19 @@ const Register = () => {
             >
               {/* Personal Information */}
               <div className="mb-10">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6 pb-3 border-b-2 border-indigo-500">
+                <h2 className="text-2xl font-bold text-emerald-900 mb-6 pb-3 border-b-2 border-emerald-950">
                   Personal Information
                 </h2>
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 gap-6">
                   <div className="w-full">
-                    <div className="flex items-center justify-between">
-                      <label>I am </label>
+                    <div className="flex items-center justify-between border rounded-2xl p-2 bg-linear-to-tr from-emerald-950 to-emerald-700 animate-bounce text-amber-100">
+                      <label>I am :</label>
                       <div className="flex items-center gap-2">
                         <input
                           type="radio"
                           name="role"
                           id="manager"
+                          className="hover:cursor-pointer"
                           checked={formData.role === "manager"}
                           value={"manager"}
                           onChange={handleChange}
@@ -124,6 +129,7 @@ const Register = () => {
                           type="radio"
                           name="role"
                           id="partner"
+                          className="hover:cursor-pointer"
                           checked={formData.role === "partner"}
                           value={"partner"}
                           onChange={handleChange}
@@ -135,6 +141,7 @@ const Register = () => {
                           type="radio"
                           name="role"
                           id="customer"
+                          className="hover:cursor-pointer"
                           checked={formData.role === "customer"}
                           value={"customer"}
                           onChange={handleChange}
@@ -202,7 +209,7 @@ const Register = () => {
                   />
                   <label
                     htmlFor="confirmPassword"
-                    className="flex items-center font-bold text-2xl"
+                    className="flex items-center font-bold text-emerald-900"
                   >
                     Confirm Password:
                   </label>
@@ -224,7 +231,7 @@ const Register = () => {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="disabled:scale-100 disabled:cursor-not-allowed flex-1 bg-linear-to-r from-indigo-600 to-indigo-700 text-white font-bold py-4 px-6 rounded-lg hover:from-indigo-700 hover:to-indigo-800 transition duration-300 transform hover:scale-105 shadow-lg"
+                  className="disabled:scale-100 disabled:cursor-not-allowed flex-1 bg-linear-to-tr from-emerald-950 to-emerald-700 text-white font-bold py-4 px-6 rounded-lg hover:to-orange-800 transition duration-300 transform hover:scale-105 shadow-lg"
                 >
                   {isLoading ? "Submitting" : "Submit"}
                 </button>

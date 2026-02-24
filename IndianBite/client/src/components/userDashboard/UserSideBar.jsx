@@ -36,7 +36,7 @@ const UserSideBar = ({
       setUser("");
       setIsLogin(false);
       sessionStorage.removeItem("IndianBiteUser");
-      setTimeout(() => onClose(), 1500);
+      //setTimeout(() => onClose(), 5000);
     } catch (error) {
       toast.error(error?.response?.data?.message || "Unknown Error");
       console.log("Logout mein error hai Frontend mein.");
@@ -47,23 +47,23 @@ const UserSideBar = ({
     <>
       <div className="p-3">
         <div>
-          <div className="text-xl font-bold">
+          <div className="text-xl font-bold text-amber-100">
             {" "}
             <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-              className="p-2"
+              className="p-2 hover:cursor-pointer"
             >
               <TfiMenuAlt />
             </button>{" "}
             <span>{isSidebarOpen ? "UserDashboard" : ""}</span>
           </div>
-          <hr />
-          <div className="py-6 space-y-5 w-full">
+          <hr className="text-emerald-200"/>
+          <div className="py-6 space-y-5 w-full text-amber-100">
             {menuItems.map((item, idx) => (
               <button
                 onClick={() => setActive(item.key)}
                 key={idx}
-                className={`w-full flex gap-3 items-center p-3 rounded-xl ${active === item.key ? "bg-amber-500 text-amber-100" : "hover:bg-gray-400"}`}
+                className={`w-full flex gap-3 items-center p-3 rounded-xl cursor-pointer ${active === item.key ? "bg-emerald-700 text-amber-100 hover:text-amber-100" : "hover:bg-emerald-100 hover:text-emerald-700"}`}
               >
                 {" "}
                 {item.icon}
