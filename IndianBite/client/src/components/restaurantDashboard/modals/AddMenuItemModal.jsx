@@ -87,7 +87,7 @@ const AddMenuItemModal = ({ onClose }) => {
       cuisine: "",
       type: "",
       preparationTime: "",
-      availability: true,
+      availability: "",
     });
 
     setImagePreviews([]);
@@ -123,7 +123,7 @@ const AddMenuItemModal = ({ onClose }) => {
               <div className="flex items-end gap-4">
                 <label
                   htmlFor="image"
-                  className="px-6 py-2 w-fit bg-(--color-secondary) text-white rounded-md hover:bg-(--color-secondary-hover) cursor-pointer transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                  className="px-6 py-2 w-fit bg-emerald-300 text-emerald-900 rounded-md hover:bg-emerald-800 hover:text-amber-100 cursor-pointer transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                 >
                   Add Image
                 </label>
@@ -149,7 +149,10 @@ const AddMenuItemModal = ({ onClose }) => {
               {imagePreviews.length !== 0 && (
                 <div className="mt-3 grid grid-cols-5 gap-1">
                   {imagePreviews.map((itemImg, idx) => (
-                    <div className="border rounded-md w-30 h-30 overflow-hidden">
+                    <div
+                      className="border rounded-md w-30 h-30 overflow-hidden"
+                      key={idx}
+                    >
                       <img
                         src={itemImg}
                         alt=""
@@ -179,7 +182,7 @@ const AddMenuItemModal = ({ onClose }) => {
                     className={`w-full border rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                       errors.itemName ? "border-red-500" : "border-gray-300"
                     }`}
-                    placeholder="e.g., Butter Chicken"
+                    placeholder="e.g., Matar Paneer"
                   />
                   {errors.itemName && (
                     <p className="text-red-600 text-xs mt-1">
@@ -296,9 +299,7 @@ const AddMenuItemModal = ({ onClose }) => {
                   >
                     <option value="">Select Type</option>
                     <option value="veg">Vegetarian</option>
-                    <option value="non-veg">Non-Vegetarian</option>
                     <option value="vegan">Vegan</option>
-                    <option value="egg">Egg</option>
                     <option value="jain">Jain</option>
                     <option value="gluten-free">Gluten-Free</option>
                     <option value="contains-nuts">Contains Nuts</option>
@@ -330,20 +331,17 @@ const AddMenuItemModal = ({ onClose }) => {
                 </div>
 
                 <div className="flex items-end gap-3 ">
-                  <input
-                    type="checkbox"
+                  <select
                     name="availability"
-                    checked={formData.availability}
+                    value={formData.availability}
                     onChange={handleInputChange}
-                    id="availability"
-                    className="w-4 h-4 text-green-600 border-gray-300 rounded focus:ring-green-500"
-                  />
-                  <label
-                    htmlFor="availability"
-                    className="text-sm font-medium text-gray-700 cursor-pointer"
+                    className="w-full h-auto text-green-600 border-gray-300 rounded p-2"
                   >
-                    Available
-                  </label>
+                    <option value="available">Available</option>
+                    <option value="unavailable">Unavailable</option>
+                    <option value="removed">Removed</option>
+                  </select>
+                  
                 </div>
               </div>
             </div>

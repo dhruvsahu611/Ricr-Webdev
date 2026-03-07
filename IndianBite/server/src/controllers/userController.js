@@ -1,6 +1,7 @@
 
 import cloudinary from "../config/cloudinary.js";
 import bcrypt from "bcrypt";
+import User from "../models/userModel.js";
 
 export const UserUpdate = async (req, res, next) => {
   try {
@@ -17,7 +18,7 @@ export const UserUpdate = async (req, res, next) => {
       paymentDetails,
       geoLocation,
     } = req.body;
-    const currentUser = req.user;
+    const currentUser = await User.findById(req.user._id);
 
     // Validation for required fields
     if (!fullName || !email || !mobileNumber) {
@@ -78,8 +79,8 @@ export const UserUpdate = async (req, res, next) => {
     // Update personal information
     currentUser.fullName = fullName;
     currentUser.email = email.toLowerCase();
-    currentUser.mobileNumber = mobileNumber;
-    currentUser.gender = gender || currentUser.gender;
+    currentUser.mobileNumber = mobileNumber.replace(/\D/g, "");
+    currentUser.gender = gender.toLowerCase() || currentUser.gender;
     currentUser.dob = dob || currentUser.dob;
     currentUser.address = address || currentUser.address;
     currentUser.city = city;

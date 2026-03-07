@@ -1,16 +1,36 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AddMenuItemModal from "./modals/AddMenuItemModal";
+import ViewItemModal from "./modals/ViewItemModal";
+import EditItemModal from "./modals/EditItemModal";
 import { FaEye, FaEdit } from "react-icons/fa";
 import { FaToggleOff, FaToggleOn } from "react-icons/fa6";
 import { ImBlocked } from "react-icons/im";
+import toast from "react-hot-toast";
+import api from "../../config/Api";
 
 const RestaurantMenu = () => {
   const [isAddItemModalOpen, setIsAddItemModalOpen] = useState(false);
   const [isViewItemModalOpen, setIsViewItemModalOpen] = useState(false);
   const [isEditItemModalOpen, setIsEditItemModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState();
-  const [menuItems, setMenuItems] = useState();
+  const [menuItems, setMenuItems] = useState([]);
+
+  const fetchMenuItem = async () => {
+    try {
+      const res = await api.get("/restaurant/menuItems");
+      toast.success(res.data.message);
+      setMenuItems(res.data.data);
+    } catch (error) {
+      console.log(error);
+      toast.error(error.response?.data?.message || "Failed to add menu item");
+    }
+  };
+
+  useEffect(() => {
+    if (!isAddItemModalOpen && !isEditItemModalOpen) fetchMenuItem();
+  }, [isAddItemModalOpen, isEditItemModalOpen]);
+
   return (
     <>
       <div className="bg-gray-50 rounded-lg p-6 h-full overflow-y-auto">
@@ -98,6 +118,19 @@ const RestaurantMenu = () => {
 
       {isAddItemModalOpen && (
         <AddMenuItemModal onClose={() => setIsAddItemModalOpen(false)} />
+      )}
+
+      {isViewItemModalOpen && (
+        <ViewItemModal
+          onClose={() => setIsViewItemModalOpen(false)}
+          selectedItem={selectedItem}
+        />
+      )}
+      {isEditItemModalOpen && (
+        <EditItemModal
+          onClose={() => setIsEditItemModalOpen(false)}
+          selectedItem={selectedItem}
+        />
       )}
     </>
   );

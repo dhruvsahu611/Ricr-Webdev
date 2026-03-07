@@ -141,7 +141,7 @@ const EditRestaurantProfileModal = ({ onClose }) => {
     try {
       const res = await api.put("/user/update", formData);
       if (res.data?.data) {
-        sessionStorage.setItem("CravingUser", JSON.stringify(res.data.data));
+        sessionStorage.setItem("IndianBiteUser", JSON.stringify(res.data.data));
         setUser(res.data.data);
         setIsLogin(true);
         setMessage({ type: "success", text: "Profile updated successfully!" });
@@ -262,9 +262,9 @@ const EditRestaurantProfileModal = ({ onClose }) => {
                     className="w-full border border-gray-300 rounded-md shadow-sm p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
                     <option value="">Select Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
                   </select>
                 </div>
 
@@ -590,7 +590,7 @@ const EditRestaurantProfileModal = ({ onClose }) => {
               <button
                 type="submit"
                 disabled={loading}
-                className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                className="hover:cursor-pointer px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
               >
                 {loading ? (
                   <>
